@@ -1,0 +1,408 @@
+::before,
+::after{
+   padding: 0;
+   margin: 0;
+   border: 0;
+   box-sizing: border-box;
+}
+a{ 
+   text-decoration: none;
+}
+ul,
+ol,
+li{
+   list-style: none;
+}
+img{
+   vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+   font-weight: inherit;
+   font-size: inherit;
+}
+html,
+body{
+   height: 100%;
+   line-height: 1;
+   font-size: 16px;
+   color: #252B42;
+   font-family: Montserrat;
+   font-weight: 500;
+   background: #FAFAFA;
+}
+.wrapper{
+   min-height: 100%;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   
+}
+._container {
+   max-width: 1046px;
+   padding: 0px 15px; /* увеличиваем внеш отступ чтоб не прилипал при адптиве */
+   margin: 0px auto;/* выстроить по центру блок*/
+   box-sizing: content-box;  /* чтоб отступ не увеличивал контейнер */
+} 
+/* ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff  */
+.header {
+   position: absolute;
+   width: 100%;
+   left: 0;
+   top: 0;
+   z-index: 10;
+}
+.header__container{
+   display: flex;
+   min-height: 104px;      /*фиксиров высота шапки*/
+   align-items: center; /* выравнивание об по центру */
+
+}
+
+
+.header__logo {
+   font-size: 24px;
+   font-weight: 700;
+   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: inherit;  /*  наследование цвета для ссылки от body */
+
+}
+.header__menu {
+   margin: 0px 0px 0px 133px;
+}
+.menu {
+   padding: 5px 0;
+}
+.menu__list {
+   display: flex;
+   flex-wrap:wrap ;
+}
+.menu__item:not(:last-child) {
+    margin: 0px 21px 0px 0px;   /*убираем у последнего мееню отступ сзади */
+}
+.menu__link {
+   color: #737373;
+   line-height: 171%;
+   font-weight: 600;
+}
+
+/* Фоновое изображение на сайт размер задает контент сайта*/
+
+._ibg{
+   position: relative;
+}
+._ibg img{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   object-fit: cover;
+}
+
+/* BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB */
+@media (max-width: 992px) {
+   .header__menu{
+      margin: 0px 0px 0px 80px;
+   }
+}
+@media (max-width: 767px) {
+   .header__menu{
+      margin: 0px 0px 0px 40px;
+   }
+}
+@media (max-width: 479px) {
+   .header__menu{
+      margin: 0px 0px 0px 20px;
+   }
+   .menu__link {
+      font-size: 18px;
+   }
+}
+/* bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb */
+
+.page{
+   flex: 1 1 auto;
+}
+.page__main-block {
+}
+.main-block {
+   position: relative;
+}
+.main-block__container_container {
+}
+.main-block__body{
+   padding: 184px 0px 191px 0px;
+   position: relative;
+   z-index: 2;
+   max-width: 400px;
+}
+@media (max-width:992px){
+   .main-block__body{
+   padding: 120px 0px 191px 0px;
+}
+}
+.main-block__body > *:not(:last-child){
+   margin: 0px 0px 35px 0px;
+   /* внутренний отступ между элементами первого уровня  */
+}
+.main-block__title { 
+   font-size: 58px;
+   line-height: 137%;
+   font-weight: 800;
+   letter-spacing: 0.2px;
+}
+@media (max-width:479px){
+   .main-block__title { 
+      font-size: 42px;
+   }
+
+}
+.main-block__text {
+      color: #737373;
+      font-size: 20px;
+      line-height: 150%;  
+}
+.main-block__buttons {
+   display: flex;
+   flex-wrap: wrap;
+   margin: -10px 0px;
+}
+.main-block__button {
+   
+   border-radius: 37px;
+   display: flex;
+   min-height   : 48px;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   padding: 0px 36px;
+   letter-spacing: 0.2px;
+   font-weight: 700;
+   line-height: 150%;
+   margin: 10px 0px;
+}
+@media (max-width:479px){
+   .main-block__button {
+      flex: 1 1 100%;
+   }
+}
+@media (min-width:479px){
+.main-block__button:not(:last-child){
+   margin: 0px 10px 0px 0px;
+   margin-right: 10px;
+}
+}
+.main-block__button_orange{
+   color: #fff;
+   background: #FF7B47;
+}
+.main-block__button_border {
+   color: #0D5C63;
+   border: 1px solid #0D5C63;
+}
+.main-block__image{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+}
+@media (max-width:1300px) {
+.main-block__image img{
+   object-position:right
+   /* двигаем фоновую картику чтобы не пропадали люди при малых экранах */
+}
+}
+@media (max-width:992px){
+   .main-block__image{
+      opacity: 0.5; /* выбелить картинку чтобы был виден текст на сайте */
+   }
+}
+/* vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv */
+
+.page__services {
+   position:relative;
+   z-index: 2;
+   margin: -111px 0px 0px 0px;
+  
+   /* поднятие блоков над первой страницей */
+}
+.services {
+}
+.services__container {
+}
+@media (min-width: 670px){
+.services__body{
+   display: flex;
+   /* flex-wrap: wrap; */
+   margin: 0px -15px -30px;
+}
+}
+.services__column {
+   margin: 0px 0px 30px 0px;
+   padding: 0px 15px;
+   flex: 0 1 33.333%;
+}
+
+@media(max-width:992px){
+   .services__column{
+      flex: 0 1 50%;
+   }
+   .services__column:not(:last-child) {
+      margin: 0px 0px 30px 0px;
+   }
+   .services__column:last-child{
+      flex: 1 1 100%;
+   }
+}
+.services__item {
+   background: #fff;
+   box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+   padding: 20px 35px;
+   height: 100%;
+}
+/* .item-service {
+} */
+.item-service > *:not(:last-child) {
+   margin: 0px 0px 10px 0px;
+}
+.item-service_green{
+   background-color: #0D5C63;
+  
+}
+.item-service_green .item-service__title{
+   color:#fff; 
+}
+.item-service_green .item-service__text{
+   color:#fff; 
+}
+.item-service__title {
+   font-size: 24px;
+   font-weight: 700;
+   line-height: 133%;
+   letter-spacing: 0.1px;
+}
+.item-service__text {
+   font-size: 14px;
+   color: #737373;
+   line-height: 142%;
+
+}
+
+/* fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff */
+
+.header-block {
+   /* margin: 0px 10px; */
+   text-align: center;
+   letter-spacing: 0.2px;
+}
+.header-block__title {
+   font-weight: 700;
+   font-size: 40px;
+   line-height: 142%;
+   
+}
+.header-block__title:not(:last-child){
+   margin: 0px 0px 10px 0px;
+}
+
+
+.header-block__sub-title {
+   font-weight: 500;
+   font-size: 14px;
+   color: #737373;
+   line-height: 142%;
+}
+@media (max-width: 996px){
+   .header-block__title{
+      font-size: 30px;
+   }
+
+
+/* mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm */
+
+/* .page__advantages {
+
+} */
+.advantages {
+   padding: 80px 0px;
+   
+}
+@media (max-width: 1020px){
+   .advantages{
+      padding: 50px 0px;
+   }
+}
+@media (max-width: 767px){
+   .advantages{
+      padding: 30px 0px;
+   }
+}
+/* .advantages__container {
+
+} */
+
+.advantages__header {
+   margin: 0px 0px 50px 0px;
+}
+
+.advantages__body {
+   flex-wrap: wrap;
+   display: flex;
+   margin: 0px -15px -30px 0px;
+}
+.advantages__column {
+   padding: 0px 15px;
+   margin: 0px -15px -30px 0px;
+   flex: 0 1 25%;
+}
+@media (max-width: 1020px){
+   .advantages__column{
+      flex: 0 1 50%;
+   }
+}
+@media (max-width: 560px){
+   .advantages__column{
+      flex: 0 1 100%;
+   }
+}
+
+.advantages__item {
+   background-color: #fff;
+   padding: 30px;
+   text-align: center;
+   font-weight: 700;
+}
+.advantages__item > :not(:last-child){
+   margin: 0px 0px 10px 0px;
+}
+.advantages__icon {
+   /* выравнивание между собой иконок */
+   height: 48px;
+   display: flex;
+   align-items: flex-end;
+   justify-content: center;
+}
+.advantages__value {
+   font-size: 40px;
+   line-height: 142%;
+   letter-spacing: 0.2px;
+}
+.advantages__text {
+   font-size: 16px;
+   line-height: 150% ;
+   letter-spacing: 0.1px;
+   color: #737373;
+   }
+   
+
+
+
+   .footer{
+   
+}
